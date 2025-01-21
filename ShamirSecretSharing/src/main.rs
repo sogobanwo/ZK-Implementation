@@ -2,18 +2,6 @@ use ark_ff::PrimeField;
 use ark_std::{test_rng};
 
 fn main(){
-//     let p = ShamirSecretSharing {
-//         share_params: (5, 3, 19, 257),
-//     };
-
-//     let generated_number = p.generate_random_coefficients();
-//     println!("Number: {:?}", generated_number);
-
-//     // let evaluation = p.evaluate(10);
-//     // println!("Number: {:?}", evaluation);
-
-//     let secrets = p.generate_secrets();
-//     println!("Secrets: {:?}", secrets);
 }
 
 fn multiply_polynomials<T: PrimeField>(x: Vec<Vec<T>>) -> Vec<T> {
@@ -48,7 +36,7 @@ struct ShamirSecretSharing<T: PrimeField> {
     share_params: (T, usize, T),
 }
 
-impl<T: PrimeField> ShamirSecretSharing <T>{
+impl<T: PrimeField > ShamirSecretSharing <T>{
     fn generate_random_coefficients(&self) -> Vec<T>{
         let mut random_coefficients:Vec<T>  = vec![self.share_params.0];
         for _i in 1..self.share_params.1 {
@@ -73,43 +61,66 @@ impl<T: PrimeField> ShamirSecretSharing <T>{
     }
 
 
-    // fn interpolate(&self) -> Vec<T> {
-    //     let all_secret_keys:Vec<(T, T)>= self.generate_secrets();
-    //     let x:Vec<(T, T)> = all_secret_keys[..self.share_params.2].to_vec();
-    //     let mut result: Vec<T> = vec![T::zero(), T::zero(), T::zero()];
-    //     for (i, y) in x.iter().enumerate() {
-    //         let mut denominator:T = T::one();
-    //         let mut numerator: T = T::zero();
-    //         let mut multiplication_vector: Vec<Vec<T>> = Vec::new();
-    //         for (j, z) in x.iter().enumerate() {
-    //             if i != j {
-    //                 denominator *= y.0 as T - z.0 as T;
-    //                 multiplication_vector.push([-(z.0 as T), 1.0].to_vec());
-    //             } else {
-    //                 numerator += z.1 as T;
-    //             }
-    //         }
-    //         let result_to_be_added = multiply_polynomials(multiplication_vector)
-    //             .iter()
-    //             .map(|x| *x * numerator / denominator)
-    //             .collect::<Vec<T>>();
-    //         result = add_polynomials(result, result_to_be_added);
-    //     }
-    //     result
-    // }
+    fn interpolate(&self, all_secret_keys:Vec<(T, T)>) -> Vec<T> {
+        let mut result: Vec<T> = vec![T::zero(), T::zero(), T::zero()];
+        for (i, y) in all_secret_keys.iter().enumerate() {
+            let mut denominator:T = T::one();
+            let mut numerator: T = T::zero();
+            let mut multiplication_vector: Vec<Vec<T>> = Vec::new();
+            for (j, z) in all_secret_keys.iter().enumerate() {
+                if i != j {
+                    denominator *= y.0 as T - z.0 as T;
+                    multiplication_vector.push([-(z.0 as T), T::one()].to_vec());
+                } else {
+                    numerator += z.1 as T;
+                }
+            }
+            let result_to_be_added = multiply_polynomials(multiplication_vector)
+                .iter()
+                .map(|all_secret_keys| *all_secret_keys * numerator / denominator)
+                .collect::<Vec<T>>();
+            result = add_polynomials(result, result_to_be_added);
+        }
+        result
+    }
 }
 
-// #[cfg(test)]
-// mod tests{
-//     use crate::ShamirSecretSharing;
-//     use ark_bn254::Fq;
-//     #[test]
-//     fn shamir_secret_sharing_test() {
-//         let p = ShamirSecretSharing {
-//             share_params: (Fq::from(5), Fq::from(3), Fq::from(10),Fq::from(257)),
-//         };
-//         p.interpolate();
-//         assert_eq!(p.interpolate()[0], Fq::from(5));
-//     }
-// }
+#[cfg(test)]
+mod tests{
+    use crate::ShamirSecretSharing;
+    use ark_bn254::Fq;
+    #[test]
+    fn shamir_secret_sharing_test() {
+        let p = ShamirSecretSharing {
+            share_params: (Fq::from(5), 4, Fq::from(10)),
+        };
+        let generated_secret: Vec<(Fq, Fq)> = p.generate_secrets();
+        let interpolation_points: Vec<(Fq, Fq)> = generated_secret.into_iter().take(4).collect();
+        let result = p.interpolate(interpolation_points);
+        assert_eq!(result[0], Fq::from(5));
+    }
+
+    #[test]
+    fn test_more_shares_to_get_secret(){
+        let p = ShamirSecretSharing {
+            share_params: (Fq::from(5), 4, Fq::from(10)),
+        };
+        let generated_secret: Vec<(Fq, Fq)> = p.generate_secrets();
+        let interpolation_points: Vec<(Fq, Fq)> = generated_secret.into_iter().take(5).collect();
+        let result = p.interpolate(interpolation_points);
+        assert_eq!(result[0], Fq::from(5));
+    }
+
+    #[test]
+    fn test_less_shares_to_get_secret(){
+        let p = ShamirSecretSharing {
+            share_params: (Fq::from(5), 4, Fq::from(10)),
+        };
+        let generated_secret: Vec<(Fq, Fq)> = p.generate_secrets();
+        let interpolation_points: Vec<(Fq, Fq)> = generated_secret.into_iter().take(3).collect();
+        let result = p.interpolate(interpolation_points);
+        assert_ne!(result[0], Fq::from(5));
+    }
+
+}
 
