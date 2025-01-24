@@ -11,14 +11,16 @@ impl<T: PrimeField > Multilinear <T> {
         let mut i = 0;
         let mut j = 0;
         let binary: usize = 2;
-
+        let jump:usize = binary.pow((evaluation_points.len() - evaluation_variable_index - 1).try_into().unwrap());
+        let langrange_basis_zero = T::one() - evaluation_points[evaluation_variable_index];
+        let langrange_basis_one = evaluation_points[evaluation_variable_index];
 
         while i < self.polynomial.len() && j < evaluation_points.len() {
-            result.push(self.polynomial[i] * (T::one() - evaluation_points[evaluation_variable_index]) + self.polynomial[i + binary.pow((evaluation_points.len() - evaluation_variable_index - 1).try_into().unwrap())] * (evaluation_points[evaluation_variable_index]));
-            if (i + 1) % binary.pow((evaluation_points.len() - evaluation_variable_index - 1).try_into().unwrap()) != 0 {
+            result.push(self.polynomial[i] * (langrange_basis_zero) + self.polynomial[i + jump] * (langrange_basis_one));
+            if (i + 1) % jump != 0 {
                 i = i + 1
             } else {
-                i = i + binary.pow((evaluation_points.len() - evaluation_variable_index - 1).try_into().unwrap());
+                i = i + jump;
             }
             j+=1
         }
