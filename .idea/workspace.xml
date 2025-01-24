@@ -10,10 +10,7 @@
     <cargoProject FILE="$PROJECT_DIR$/PolynomialInterpolation/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e394b115-a99f-45bf-a9ae-a80b7a3aa254" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PolynomialInterpolation/target/.rustc_info.json" beforeDir="false" afterPath="$PROJECT_DIR$/PolynomialInterpolation/target/.rustc_info.json" afterDir="false" />
-    </list>
+    <list default="true" id="e394b115-a99f-45bf-a9ae-a80b7a3aa254" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,20 +25,20 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/ShamirSecretSharing" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "sogobanwo"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;sogobanwo&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/sogobanwo/ZK-Implementation.git",
-    "accountId": "f3c995f9-300c-4daa-8d9f-7511b0dbec36"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/sogobanwo/ZK-Implementation.git&quot;,
+    &quot;accountId&quot;: &quot;f3c995f9-300c-4daa-8d9f-7511b0dbec36&quot;
   }
-}]]></component>
+}</component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="hyQJqkQG" />
   </component>
@@ -76,10 +73,11 @@
     "org.rust.cargo.project.model.PROJECT_DISCOVERY": "true",
     "org.rust.cargo.project.model.impl.CargoExternalSystemProjectAware.subscribe.first.balloon": "",
     "org.rust.first.attach.projects": "true",
+    "org.rust.hideNoCargoProjectNotifications/Users/mac/RustroverProjects/ZK-Implementations /MultilinearPolynomialInplementation/src/main.rs": "true",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Cargo.Test main::tests (1)">
+  <component name="RunManager" selected="Cargo.Test main::tests (2)">
     <configuration name="Run" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
       <option name="buildProfileId" value="dev" />
       <option name="command" value="run --package ZK-Implementations_ --bin ZK-Implementations_" />
@@ -185,8 +183,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Cargo.Test main::tests (1)" />
         <item itemvalue="Cargo.Test main::tests (2)" />
+        <item itemvalue="Cargo.Test main::tests (1)" />
         <item itemvalue="Cargo.Test main::tests" />
         <item itemvalue="Cargo.Test tests::test_interpolate" />
         <item itemvalue="Cargo.Test tests::added_poly" />
@@ -209,6 +207,7 @@
       <workItem from="1737274951131" duration="4514000" />
       <workItem from="1737297290594" duration="598000" />
       <workItem from="1737361757678" duration="9258000" />
+      <workItem from="1737642688165" duration="6391000" />
     </task>
     <servers />
   </component>
