@@ -10,7 +10,10 @@
     <cargoProject FILE="$PROJECT_DIR$/PolynomialInterpolation/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e394b115-a99f-45bf-a9ae-a80b7a3aa254" name="Changes" comment="" />
+    <list default="true" id="e394b115-a99f-45bf-a9ae-a80b7a3aa254" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MultilinearPolynomialInplementation/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/MultilinearPolynomialInplementation/src/main.rs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,33 +53,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Cargo.Run.executor": "Run",
-    "Cargo.Test main::tests (1).executor": "Run",
-    "Cargo.Test main::tests (2).executor": "Run",
-    "Cargo.Test main::tests.executor": "Run",
-    "Cargo.Test tests::added_poly.executor": "Run",
-    "Cargo.Test tests::test_degree.executor": "Run",
-    "Cargo.Test tests::test_interpolate.executor": "Run",
-    "Cargo.Test tests::test_multiply_polynomials.executor": "Run",
-    "Cargo.Test tests::test_multiply_polynomials_with_negative_coefficients.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.rust.reset.selective.auto.import": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "org.rust.cargo.project.model.PROJECT_DISCOVERY": "true",
-    "org.rust.cargo.project.model.impl.CargoExternalSystemProjectAware.subscribe.first.balloon": "",
-    "org.rust.first.attach.projects": "true",
-    "org.rust.hideNoCargoProjectNotifications/Users/mac/RustroverProjects/ZK-Implementations /MultilinearPolynomialInplementation/src/main.rs": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Cargo.Run.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test main::tests (1).executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test main::tests (2).executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test main::tests.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test tests::added_poly.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test tests::test_degree.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test tests::test_interpolate.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test tests::test_multiply_polynomials.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test tests::test_multiply_polynomials_with_negative_coefficients.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.rust.reset.selective.auto.import&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;org.rust.cargo.project.model.PROJECT_DISCOVERY&quot;: &quot;true&quot;,
+    &quot;org.rust.cargo.project.model.impl.CargoExternalSystemProjectAware.subscribe.first.balloon&quot;: &quot;&quot;,
+    &quot;org.rust.first.attach.projects&quot;: &quot;true&quot;,
+    &quot;org.rust.hideNoCargoProjectNotifications/Users/mac/RustroverProjects/ZK-Implementations /MultilinearPolynomialInplementation/src/main.rs&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Cargo.Test main::tests (2)">
     <configuration name="Run" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
       <option name="buildProfileId" value="dev" />
@@ -208,6 +211,7 @@
       <workItem from="1737297290594" duration="598000" />
       <workItem from="1737361757678" duration="9258000" />
       <workItem from="1737642688165" duration="6391000" />
+      <workItem from="1737921240665" duration="2006000" />
     </task>
     <servers />
   </component>
